@@ -242,7 +242,7 @@ console.log(max);
                     key={geo.rsmKey}
                     geography={geo}
                     stroke={geo.properties.ZONE_NO === this.props.valueFromParent3? "#000000":"#000000" }
-                    strokeWidth={geo.properties.ZONE_NO === this.props.valueFromParent3? 1:1}
+                    strokeWidth={geo.properties.ZONE_NO === this.props.valueFromParent3? 3.5:1}
                    fill={current ? this.colorScale(current.value) : "#fff"}
                     //fill="#660f00"
                     style={geographyStyle}
@@ -358,7 +358,7 @@ xAxis = d3.axisBottom(x)
                   key={geo.rsmKey}
                   geography={geo}
                   stroke={geo.properties.ZONE_NO === this.props.valueFromParent3? "#ffe6e6":"#000000" }
-                  strokeWidth={geo.properties.ZONE_NO === this.props.valueFromParent3? 1:1}
+                  strokeWidth={geo.properties.ZONE_NO === this.props.valueFromParent3? 2:1.8}
                  fill={current ? this.colorScale(current.value) : "#fff"}
                   //fill="#660f00"
                   style={geographyStyle}
