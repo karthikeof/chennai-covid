@@ -1,6 +1,6 @@
 {
   "homepage": "http://karthikeof.github.io/chennai-covid",
-  "name": "Chennai-covid",
+  "name": "chennai-covid",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
