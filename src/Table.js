@@ -22,8 +22,7 @@ class Table extends Component {
   if (this.props.valueFromParent2 !== prevProps.valueFromParent2) {
   this.handleClick(16);
  }
-
-
+ 
  }
  componentDidMount() {
   svg =d3.select(this.refs.BarGraph)
@@ -133,21 +132,25 @@ return res;
   }
   render() {
 
-    var flag=1,flag1=1;
+    var flag=1,flag1='TBU',f=1;
     Object.keys(this.props.valueFromParent2).map(el => {
     // console.log('key', el);
     flag=0;
-    //obj[el].map(sub_el => console.log(sub_el));
-    })
-    Object.keys(this.props.valueFromParent6).map(el => {
+    Object.keys(this.props.valueFromParent6).map(el1=> {
       // console.log('key', el);
-      flag1=0;
-      //obj[el].map(sub_el => console.log(sub_el));
+      Object.keys(this.props.valueFromParent).map(el2=> {
+f=0;
+      flag1=this.props.valueFromParent6[this.props.valueFromParent[0].id-1].ContainmentZone;
+    })
+      
       })
       
+    //obj[el].map(sub_el => console.log(sub_el));
+    })
     
+ 
 
-    if(flag===1 || flag1==1)
+    if(flag===1 )
     {
       return (
      
@@ -270,7 +273,7 @@ return res;
         
          
      
-    }
+    
     
     
     return (
@@ -291,11 +294,11 @@ return res;
 </Card>
 
 <div className="rowC" style={{marginTop: '1px',padding: "0px" }}  >
-<Card style={{ width: '70px',height:'50px',marginTop:'2px',backgroundColor: "#f2e6ff",padding: "6px" ,border: 'none',color: "#b366ff",fontFamily: "Saira", fontWeight: 'bold'}}>
+<Card style={{ width: '70px',height:'50px',marginTop:'2px',backgroundColor: "#e6ecff",padding: "6px" ,border: 'none',color: "#668cff",fontFamily: "Saira", fontWeight: 'bold'}}>
 <center><div>&nbsp;&nbsp;&nbsp;Wards&nbsp;&nbsp;</div><div>{this.props.valueFromParent[0].wards}</div></center>
 </Card>
 <Card style={{ width: '142px',marginLeft: '-6px',height:'50px',marginTop:"2px",backgroundColor: "#ffd699",padding: "6px", border: 'none',color: "#cc7a00",fontFamily: "Saira", fontWeight: 'bold'}}>
-<center><div >Containment&nbsp;Zones  </div><div>{this.props.valueFromParent6[this.props.valueFromParent[0].id-1].ContainmentZone}</div></center>
+<center><div >Containment&nbsp;Zones  </div><div>{flag1}</div></center>
 </Card>
 
 
@@ -328,6 +331,7 @@ return res;
       </div>
 
     )
+}
   }
 }
 

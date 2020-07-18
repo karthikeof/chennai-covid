@@ -192,6 +192,7 @@ componentDidMount() {
   svg.append("text")
     
     .text("Population density");
+   // this.forceUpdate();
 
 }
 

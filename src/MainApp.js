@@ -31,7 +31,7 @@ class MainApp extends Component{
         .then(result => {
           Object.keys(result)
           .forEach(function(key) {
-     // console.log(result[key]);
+     console.log(result[key]);
       ContainmentZoneArray.push(result[key]);
         })
         })
@@ -153,7 +153,7 @@ if(key>29 && result.cases[key].zoneName!=='OTHER DISTRICT')
 
           </div>
           <div className="rowC" >
-          <Table valueFromParent={this.state.data} valueFromParent4={this.state.chartresult} valueFromParent6={this.state.ContainmentZone}  valueFromParent2={this.state.result} functionCallFromParent1={this.parentFunction1.bind(this)} />
+          <Table  valueFromParent6={this.state.ContainmentZone}  valueFromParent={this.state.data} valueFromParent4={this.state.chartresult} valueFromParent2={this.state.result} functionCallFromParent1={this.parentFunction1.bind(this)} />
           <App valueFromParent1={this.state.result} functionCallFromParent={this.parentFunction.bind(this)} valueFromParent3={this.state.zoneNum}  />
 
             <Charts valueFromParent2={this.state.chartresult} valueFromParent3={this.state.zoneNum}/>
