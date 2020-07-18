@@ -26,14 +26,12 @@ table tbody tr:hover td {
 }
 
 .axisRed text{
-  fill: #blue;
+  fill: blue;
 }
 
 .container {
   width: calc(93%);
-  height: calc(100%);
   padding-bottom: 2px;
-
 }
 
 
@@ -75,6 +73,8 @@ table tbody tr:hover td {
 .
 
 .rowC{display:flex; flex-direction:row;}
+.rowB{display:flex; flex-direction:row;}
+
 
 .no-margin {
   margin: 0;

@@ -13,7 +13,7 @@ import { Card, Button, CardImg, CardTitle, CardText, CardDeck, CardSubtitle, Car
 
 const Chennai_TOPO_JSON = require('./chennaiTopo.json');
 const PROJECTION_CONFIG = {
-  scale: 119000,
+  scale: 112790,
 
   center:[80.2167, 13.0439] // always in [East Latitude, North Longitude]
 };
@@ -71,7 +71,7 @@ class App extends Component {
     return () => {
       this.setState(
         {
-        tooltipContent:(current.Zone+','+geo.properties.Name),
+        tooltipContent:('Zone '+geo.properties.ZONE_NO+'- '+geo.properties.ZONE_NAME+ ', '+geo.properties.Name+'- '+geo.properties.wardName),
         ZoneName:'NA'
         });
       var keys = [];
@@ -91,7 +91,7 @@ class App extends Component {
 
      this.setState(
 {
-tooltipContent:(''),
+tooltipContent:(undefined),
 ZoneName:'NA'
 });
   };
@@ -192,9 +192,14 @@ componentDidMount() {
   svg.append("text")
     
     .text("Population density");
+    document.addEventListener('click', this.handleClickOutside, true);
 
 }
+handleClickOutside = event => {
 
+      console.log('Heelo');
+  
+}
 render()
 {
   console.log('APP render'+this.props.valueFromParent3);
@@ -213,9 +218,10 @@ console.log(max);
   if(flag===1)
   {
     return (
-      <div  style={{ marginLeft: '-2%', marginTop: '1%'}}>
-      <ReactTooltip delayShow={5000} > {this.state.tooltipContent}</ReactTooltip>
-  
+      <div style={{ marginLeft: '-2%', marginTop: '1%'}}>
+      <ReactTooltip  > {this.state.tooltipContent}</ReactTooltip>
+
+
       <ComposableMap
           projectionConfig={PROJECTION_CONFIG}
           projection="geoMercator"
@@ -235,8 +241,8 @@ console.log(max);
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    stroke={geo.properties.ZONE_NO === this.props.valueFromParent3? "#ffe9e6":"#000000" }
-                    strokeWidth={geo.properties.ZONE_NO === this.props.valueFromParent3? 2:1.5}
+                    stroke={geo.properties.ZONE_NO === this.props.valueFromParent3? "#000000":"#000000" }
+                    strokeWidth={geo.properties.ZONE_NO === this.props.valueFromParent3? 1:1}
                    fill={current ? this.colorScale(current.value) : "#fff"}
                     //fill="#660f00"
                     style={geographyStyle}
@@ -254,7 +260,7 @@ console.log(max);
           </Geographies>
    </ComposableMap>
         
- <div ref='colourscale' style={{ marginLeft: '25%'}} >
+ <div ref='colourscale' style={{ marginLeft: '20%'}} >
  </div>
 
         
@@ -310,7 +316,6 @@ xAxis = d3.axisBottom(x)
     .enter().insert("rect", ".tick")
       .attr("height", 8)
       .attr("x", function(d) { return x(d[0]); })
-      
       .attr("width", function(d) { return x(d[1]) - x(d[0]); })
       .attr("fill", function(d) { return threshold(d[0]); })
 
@@ -329,14 +334,14 @@ xAxis = d3.axisBottom(x)
      
   return (
 
-    <div className="full-width-height container" style={{ marginLeft: '-2%', marginTop: '1%'}}>
-    <ReactTooltip   >{this.state.tooltipContent}</ReactTooltip>
-
+    <div style={{ marginLeft: '-30px', marginTop: '-2px'}}>
+      
+    <ReactTooltip id='test'>{this.state.tooltipContent}</ReactTooltip>
     <ComposableMap
         projectionConfig={PROJECTION_CONFIG}
         projection="geoMercator"
-        width={540}
-        height={820}
+        width={520}
+        height={850}
         data-tip=""
       >
 
@@ -352,8 +357,8 @@ xAxis = d3.axisBottom(x)
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  stroke={geo.properties.ZONE_NO === this.props.valueFromParent3? "#ffe9e6":"#000000" }
-                  strokeWidth={geo.properties.ZONE_NO === this.props.valueFromParent3? 2:1.5}
+                  stroke={geo.properties.ZONE_NO === this.props.valueFromParent3? "#ffe6e6":"#000000" }
+                  strokeWidth={geo.properties.ZONE_NO === this.props.valueFromParent3? 1:1}
                  fill={current ? this.colorScale(current.value) : "#fff"}
                   //fill="#660f00"
                   style={geographyStyle}
@@ -371,7 +376,7 @@ xAxis = d3.axisBottom(x)
         </Geographies>
  </ComposableMap>
       
- <div ref='colourscale' style={{ marginLeft: '25%', marginTop: '2%'}} >
+ <div ref='colourscale' style={{ marginLeft: '95px', marginTop: '-10px'}} >
  </div>
 
     </div>

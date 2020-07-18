@@ -47,13 +47,13 @@ class Charts extends Component {
         this.setState(
           {
             
-            ConfirmedvalueDate: '(+'+(this.props.valueFromParent2[valu-1].value[this.props.valueFromParent3-1].value -this.props.valueFromParent2[valu-2].value[this.props.valueFromParent3-1].value)+') '+ this.props.valueFromParent2[valu-1].date ,
+            ConfirmedvalueDate: '('+(this.props.valueFromParent2[valu-1].value[this.props.valueFromParent3-1].value -this.props.valueFromParent2[valu-2].value[this.props.valueFromParent3-1].value)+') '+ this.props.valueFromParent2[valu-1].date ,
             Confirmedvalue:this.props.valueFromParent2[valu-1].value[this.props.valueFromParent3-1].value,
             
-           ActiveDate:'(+'+(this.props.valueFromParent2[valu-1].value[this.props.valueFromParent3-1].active -this.props.valueFromParent2[valu-2].value[this.props.valueFromParent3-1].active)+') '+this.props.valueFromParent2[valu-1].date ,
+           ActiveDate:'('+(this.props.valueFromParent2[valu-1].value[this.props.valueFromParent3-1].active -this.props.valueFromParent2[valu-2].value[this.props.valueFromParent3-1].active)+') '+this.props.valueFromParent2[valu-1].date ,
            Activevalue:this.props.valueFromParent2[valu-1].value[this.props.valueFromParent3-1].active,
 
-            RecoveredDate:'(+'+(this.props.valueFromParent2[valu-1].value[this.props.valueFromParent3-1].recovered -this.props.valueFromParent2[valu-2].value[this.props.valueFromParent3-1].recovered)+') '+this.props.valueFromParent2[valu-1].date ,
+            RecoveredDate:'('+(this.props.valueFromParent2[valu-1].value[this.props.valueFromParent3-1].recovered -this.props.valueFromParent2[valu-2].value[this.props.valueFromParent3-1].recovered)+') '+this.props.valueFromParent2[valu-1].date ,
             Recoveredvalue:this.props.valueFromParent2[valu-1].value[this.props.valueFromParent3-1].recovered,
 
             ZoneName:this.props.valueFromParent2[valu-1].value[this.props.valueFromParent3-1].Zone
@@ -153,6 +153,7 @@ svg = d3.select(this.refs.cardb).append("svg")
 
                       paths1= svg1.append("path")
                       .attr("class", "line")
+                      
                       paths1.transition()
                      .duration(1000)
 
@@ -204,7 +205,7 @@ svg = d3.select(this.refs.cardb).append("svg")
 
   this.setState(currentState => {
     return { Confirmedvalue:  d.value[vall].value,
-      ConfirmedvalueDate:'(+'+(d.value[vall].value-newCount)+') '+d.date
+      ConfirmedvalueDate:'('+(d.value[vall].value-newCount)+') '+d.date
     };
   });
 }
@@ -216,7 +217,7 @@ handleClick1 = (d,vall,newCount) => {
   this.setState(currentState => {
     return { 
       Activevalue:  d.value[vall].active,
-      ActiveDate:'(+'+(d.value[vall].active-newCount)+') '+d.date
+      ActiveDate:'('+(d.value[vall].active-newCount)+') '+d.date
     };
   });
 }
@@ -227,7 +228,7 @@ handleClick2 = (d,vall,newCount) => {
   this.setState(currentState => {
     return {
        Recoveredvalue:  d.value[vall].recovered,
-     RecoveredDate:'(+'+(d.value[vall].recovered-newCount)+') '+d.date
+     RecoveredDate:'('+(d.value[vall].recovered-newCount)+') '+d.date
     };
   });
 }
@@ -406,7 +407,7 @@ if (flag===0) {
       .call(d3.axisBottom(x)
       .tickSizeOuter(0)
 
-          .ticks(d3.timeDay.every(counter/4))
+          .ticks(d3.timeDay.every(counter/6))
 
           .tickFormat(function(d, i) {
               return  d3.timeFormat("%d  %b %y")(d)
@@ -496,7 +497,7 @@ if (flag===0) {
                 .call(d3.axisBottom(x1)
                 .tickSizeOuter(0)
 
-                    .ticks(d3.timeDay.every(counter/4))
+                    .ticks(d3.timeDay.every(counter/6))
 
                     .tickFormat(function(d, i) {
                         return  d3.timeFormat("%d  %b %y")(d)
@@ -579,7 +580,7 @@ if (flag===0) {
                     .call(d3.axisBottom(x2)
                     .tickSizeOuter(0)
 
-                        .ticks(d3.timeDay.every(counter/4))
+                        .ticks(d3.timeDay.every(counter/6))
 
                         .tickFormat(function(d, i) {
                             return  d3.timeFormat("%d  %b %y")(d)
@@ -609,14 +610,14 @@ else {
 
 //  return (<div></div>)
 return (
-<div ref='chart' style={{ width: '5%',    marginTop: "1%",
-border: "1px",marginRight: "33%" }}>
+<div ref='chart' style={{ width: '5%',marginTop: "1%",
+border: "1px"}}>
 <div >
 <div style={{fontSize:17,color:"#ffffff",height :'10%'}} ><h4>{this.state.ZoneName} </h4></div>
 
 </div>
 
-<Card  style={{ width: '780%',marginTop: "-17px%", height :'30%',backgroundColor: "#ffffff",padding: "2px", border: 'none',color: "#ffffff",fontFamily: "Saira", fontWeight: 'bold'}}>
+<Card  style={{ width: '100%',marginTop: "-17px%", height :'30%',backgroundColor: "#ffffff",padding: "2px", border: 'none',color: "#ffffff",fontFamily: "Saira", fontWeight: 'bold'}}>
 <div ref='cardb'><div className="rowC" ><div style={{paddingLeft: 70}}>Confirmed cases</div><div style={{paddingLeft: 50,fontSize : 15,textAlign:'right'}}>4000</div><div style={{float: 'right',paddingTop:5,fontSize : 10}}> 18 Apr 20</div></div></div>
      </Card>
      <Card  style={{ width: '780%',marginTop: "10%", height :'30%',backgroundColor: "#ffffff",padding: "2px", border: 'none',color: "#ffffff",fontFamily: "Saira", fontWeight: 'bold'}}>
@@ -628,25 +629,25 @@ border: "1px",marginRight: "33%" }}>
 </div>
 )
 }
-
+console.log('size'+window.innerWidth);
       //   this.drawChart1();
       return (
        
-      <div ref='chart' style={{ width: '5%',    marginTop: "-2.6%",
-      border: "0px",marginRight: "32%",fontFamily: "Saira", }}>
+      <div ref='chart' style={{ width: '5%', marginLeft:"0px",   marginTop: "-27px",
+      border: "0px",fontFamily: "Saira" }}>
 <div >
-<div style={{width: '780%',fontSize:17,color:"#6666ff",height :'0%'}} ><center><h4>{this.state.ZoneName==='Total'?'CHENNAI':this.state.ZoneName} </h4></center></div>
+<div style={{width: '530px',fontSize:17,color:"#6666ff",height :'0%'}} ><center><h4>{this.state.ZoneName==='Total'?'CHENNAI':this.state.ZoneName} </h4></center></div>
 
 </div>
 
-      <Card  style={{ width: '780%',marginTop: "-17px", height :'29%',backgroundColor: "#ffd4cc",padding: "2px", border: 'none',color: "#ff2600",fontFamily: "Saira", fontWeight: 'bold'}}>
+      <Card  style={{ width: '530px',marginTop: "-17px", height :'203px',backgroundColor: "#ffd4cc",padding: "2px", border: 'none',color: "#ff2600",fontFamily: "Saira", fontWeight: 'bold'}}>
      <div ref='cardb'><div className="rowC" ><div style={{fontSize : 17, paddingLeft:15}}>Confirmed cases</div><div style={{fontSize : 17}}> &nbsp; { this.state.Confirmedvalue}</div><div style={{paddingLeft: 3,paddingTop:4.31,fontSize : 12}}> { this.state.ConfirmedvalueDate}</div></div></div>
      
       </Card>
-      <Card  style={{ width: '780%',marginTop: "10%", height :'29%',backgroundColor: "#ccf2ff",padding: "2px", border: 'none',color: "#0086b3",fontFamily: "Saira", fontWeight: 'bold'}}>
+      <Card  style={{ width: '530px',marginTop: "10%", height :'203px',backgroundColor: "#ccf2ff",padding: "2px", border: 'none',color: "#0086b3",fontFamily: "Saira", fontWeight: 'bold'}}>
       <div ref='cardA'><div className="rowC" ><div style={{fontSize : 17, paddingLeft:15}}>Active cases</div><div style={{alignContent: 'center',fontSize : 17}}> &nbsp; { this.state.Activevalue}</div><div style={{paddingLeft: 3,paddingTop:4.31,fontSize : 12}}> { this.state.ActiveDate}</div></div></div>
       </Card>
-      <Card  style={{ width: '780%',marginTop: "10%", height :'29%',backgroundColor: "#ddffcc",padding: "2px", border: 'none',color: "#408000",fontFamily: "Saira", fontWeight: 'bold'}}>
+      <Card  style={{ width: '530px',marginTop: "10%", height :'203px',backgroundColor: "#ddffcc",padding: "2px", border: 'none',color: "#408000",fontFamily: "Saira", fontWeight: 'bold'}}>
       <div ref='cardC'><div className="rowC" ><div style={{fontSize : 17, paddingLeft:15}}>Recovered cases</div><div style={{alignContent: 'center',fontSize : 17}}> &nbsp; { this.state.Recoveredvalue}</div><div style={{paddingLeft: 3,paddingTop:4.31,fontSize : 12}}> { this.state.RecoveredDate}</div></div></div>
       </Card>
       </div>
