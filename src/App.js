@@ -192,14 +192,9 @@ componentDidMount() {
   svg.append("text")
     
     .text("Population density");
-    document.addEventListener('click', this.handleClickOutside, true);
 
 }
-handleClickOutside = event => {
 
-      console.log('Heelo');
-  
-}
 render()
 {
   console.log('APP render'+this.props.valueFromParent3);

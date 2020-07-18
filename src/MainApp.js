@@ -152,7 +152,7 @@ if(key>29 && result.cases[key].zoneName!=='OTHER DISTRICT')
           <h6 style={{marginTop:"31px",color:"#666666"}}>  &nbsp;Chennai</h6>
 
           </div>
-          <div className="rowB" >
+          <div className="rowC" >
           <Table valueFromParent={this.state.data} valueFromParent4={this.state.chartresult} valueFromParent6={this.state.ContainmentZone}  valueFromParent2={this.state.result} functionCallFromParent1={this.parentFunction1.bind(this)} />
           <App valueFromParent1={this.state.result} functionCallFromParent={this.parentFunction.bind(this)} valueFromParent3={this.state.zoneNum}  />
 
