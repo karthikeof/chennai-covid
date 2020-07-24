@@ -401,13 +401,13 @@ if (flag===0) {
 
 
 
-
+console.log('counter'+counter)
 
     svg.select(".x.axis")
       .call(d3.axisBottom(x)
       .tickSizeOuter(0)
 
-          .ticks(d3.timeDay.every(counter/6))
+          .ticks(d3.timeDay.every(counter/3))
 
           .tickFormat(function(d, i) {
               return  d3.timeFormat("%d  %b %y")(d)
@@ -497,7 +497,7 @@ if (flag===0) {
                 .call(d3.axisBottom(x1)
                 .tickSizeOuter(0)
 
-                    .ticks(d3.timeDay.every(counter/6))
+                    .ticks(d3.timeDay.every(counter/3))
 
                     .tickFormat(function(d, i) {
                         return  d3.timeFormat("%d  %b %y")(d)
@@ -580,7 +580,7 @@ if (flag===0) {
                     .call(d3.axisBottom(x2)
                     .tickSizeOuter(0)
 
-                        .ticks(d3.timeDay.every(counter/6))
+                        .ticks(d3.timeDay.every(counter/3))
 
                         .tickFormat(function(d, i) {
                             return  d3.timeFormat("%d  %b %y")(d)
