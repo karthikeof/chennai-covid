@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/chennai-covid/precache-manifest.976a25aa53c0e2f97d8575ff735cf9ee.js"
+  "/chennai-covid/precache-manifest.ca57fae323da6cf00f232cb84b597cb2.js"
 );
 
 self.addEventListener('message', (event) => {

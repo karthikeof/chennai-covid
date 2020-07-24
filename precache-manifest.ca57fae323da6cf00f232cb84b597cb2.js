@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "73b1df62823fd39833cd8a624156a62e",
+    "revision": "01da7ca1684e867eb43ad34e1c3732db",
     "url": "/chennai-covid/index.html"
   },
   {
-    "revision": "b072efd24ad9245122b3",
+    "revision": "c28453ddf9ce3d9a5b67",
     "url": "/chennai-covid/static/css/main.2ced2cf4.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/chennai-covid/static/js/2.265f403f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b072efd24ad9245122b3",
-    "url": "/chennai-covid/static/js/main.5529456a.chunk.js"
+    "revision": "c28453ddf9ce3d9a5b67",
+    "url": "/chennai-covid/static/js/main.234284ea.chunk.js"
   },
   {
     "revision": "2970ac22dc859b005969",
