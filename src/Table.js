@@ -227,7 +227,7 @@ f=0;
         var data1 = [DailyData[4].NewCases,DailyData[3].NewCases,DailyData[2].NewCases,DailyData[1].NewCases,DailyData[0].NewCases  ];
       var data = [DailyData[4].NewCases/max *100 ,DailyData[3].NewCases/max *100 ,DailyData[2].NewCases/max *100 ,DailyData[1].NewCases/max *100,DailyData[0].NewCases/max *100   ];
         console.log(data1);
-        var data2 = [d3.timeFormat("%b %d")(d3.timeParse("%d-%b-%y")(DailyData[4].Date)),d3.timeFormat("%b %d")(d3.timeParse("%d-%b-%y")(DailyData[3].Date)),d3.timeFormat("%b %d")(d3.timeParse("%d-%b-%y")(DailyData[2].Date)),d3.timeFormat("%b %d")(d3.timeParse("%d-%b-%y")(DailyData[1].Date)),d3.timeFormat("%b %d")(d3.timeParse("%d-%b-%y")(DailyData[0].Date )) ];
+        var data2 = [d3.timeFormat("%d/%m")(d3.timeParse("%d-%b-%y")(DailyData[4].Date)),d3.timeFormat("%d/%m")(d3.timeParse("%d-%b-%y")(DailyData[3].Date)),d3.timeFormat("%d/%m")(d3.timeParse("%d-%b-%y")(DailyData[2].Date)),d3.timeFormat("%d/%m")(d3.timeParse("%d-%b-%y")(DailyData[1].Date)),d3.timeFormat("%d/%m")(d3.timeParse("%d-%b-%y")(DailyData[0].Date )) ];
 
       //  d3.timeFormat("%d-%b-%y")
              
@@ -265,7 +265,7 @@ f=0;
        svg.selectAll("text1")
        .data(data2)
      .enter().append("text")
-       .attr("font-size","11")
+       .attr("font-size","10.5")
        .attr("fill",'#b366ff' )
        .attr("x", (d, i) => i * 38 -(i*3))
            .attr("y", (d, i) =>  103)
