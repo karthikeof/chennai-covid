@@ -37,7 +37,7 @@ class MainApp extends Component{
         })
 console.log(ContainmentZoneArray);
       const url =
-        'https://v2-api.sheety.co/be53bea9995480777df56e14adcfd93b/covid19Chennai/cases'
+        'https://project-1212062241057210388.firebaseio.com/case.json'
       fetch(url)
         .then(result => result.json())
         .then(result => {
@@ -155,7 +155,6 @@ if(key>29 && result.cases[key].zoneName!=='OTHER DISTRICT')
           <div className="rowC" >
           <Table  valueFromParent6={this.state.ContainmentZone}  valueFromParent={this.state.data} valueFromParent4={this.state.chartresult} valueFromParent2={this.state.result} functionCallFromParent1={this.parentFunction1.bind(this)} />
           <App valueFromParent1={this.state.result} functionCallFromParent={this.parentFunction.bind(this)} valueFromParent3={this.state.zoneNum}  />
-
             <Charts valueFromParent2={this.state.chartresult} valueFromParent3={this.state.zoneNum}/>
             </div >
 
